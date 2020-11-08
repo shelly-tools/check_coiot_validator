@@ -12,7 +12,7 @@ Query Device description via /cit/d
 Query Status response via /cit/s
 
 ```
-./check_coiot_validator -ip=192.168.178.210 -path=/cit/d
+./check_coiot_validator -ip=192.168.178.210 -path=/cit/s
 ```
 
 Example Response with /cit/d would be
