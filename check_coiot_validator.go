@@ -38,10 +38,10 @@ func main() {
 
 	if rv != nil {
 		if isJSON(rv.Payload) == true {
-			fmt.Printf("OK: Payload is valid JSON\n: %s", rv.Payload)
+			fmt.Printf("OK: Payload is valid JSON:\n %s", rv.Payload)
 			os.Exit(0)
 		} else {
-			fmt.Printf("CRITICAL: Payload is invalid JSON\n: %s", rv.Payload)
+			fmt.Printf("CRITICAL: Payload is invalid JSON:\n %s", rv.Payload)
 			os.Exit(2)
 		}
 	}
