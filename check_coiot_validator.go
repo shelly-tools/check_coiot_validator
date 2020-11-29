@@ -25,22 +25,22 @@ func main() {
 
 	c, err := coiot.Dial("udp", *ip+":5683")
 	if err != nil {
-		fmt.Printf("Error dialing: %v", err)
+		fmt.Printf("Error dialing: %v \n", err)
 		os.Exit(2)
 	}
 
 	rv, err := c.Send(req)
 	if err != nil {
-		fmt.Printf("Error sending request: %v", err)
+		fmt.Printf("Error sending request: %v \n", err)
 		os.Exit(2)
 	}
 
 	if rv != nil {
 		if isJSON(rv.Payload) == true {
-			fmt.Printf("OK: Payload is valid JSON:\n %s", rv.Payload)
+			fmt.Printf("OK: Payload is valid JSON:\n %s \n", rv.Payload)
 			os.Exit(0)
 		} else {
-			fmt.Printf("CRITICAL: Payload is invalid JSON:\n %s", rv.Payload)
+			fmt.Printf("CRITICAL: Payload is invalid JSON:\n %s \n", rv.Payload)
 			os.Exit(2)
 		}
 	}
